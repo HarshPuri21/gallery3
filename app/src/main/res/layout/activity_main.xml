@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- This image fills the entire window, including the regions under system bars. -->
+    <ImageView android:id="@+id/wallpaper_image"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scaleType="centerCrop" android:contentDescription="App wallpaper" />
+    <View android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#7C07111F" />
+
+    <ScrollView android:id="@+id/main_content"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingLeft="16dp" android:paddingRight="16dp"
+            android:paddingTop="12dp" android:paddingBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="GALLERY GRABBER" android:textColor="#75F6D5"
+                        android:textStyle="bold" android:textSize="22sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="V2PH + Xasiat • album downloads" android:textColor="#E4F1F8"
+                        android:textSize="12sp" android:paddingBottom="8dp" />
+                </LinearLayout>
+                <Button android:id="@+id/wallpaper_btn" style="@style/GlassButton"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Wallpaper" />
+            </LinearLayout>
+            <EditText android:id="@+id/url_input" android:layout_width="match_parent"
+                android:layout_height="100dp" android:padding="12dp"
+                android:background="@drawable/glass_panel" android:gravity="top|start"
+                android:inputType="textMultiLine|textNoSuggestions|textUri"
+                android:hint="Paste one album URL per line" android:textColor="#FFFFFF"
+                android:textColorHint="#BDCAD9" android:textSize="14sp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="8dp">
+                <Button android:id="@+id/queue_btn" style="@style/GlassButton"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Add to queue" />
+                <Button android:id="@+id/login_btn" style="@style/GlassButton"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Site login" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button android:id="@+id/start_btn" style="@style/GlassButton"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Start" />
+                <Button android:id="@+id/pause_btn" style="@style/GlassButton"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Pause" />
+                <Button android:id="@+id/stop_btn" style="@style/GlassButton"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Stop" />
+            </LinearLayout>
+            <TextView android:id="@+id/session_status"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Site cookies: checking…" android:textColor="#D4E8F3"
+                android:textSize="12sp" android:paddingTop="10dp" />
+            <TextView android:id="@+id/status" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Ready — Pictures/Gallery Grabber"
+                android:textColor="#75F6D5" android:textSize="13sp"
+                android:paddingTop="8dp" android:paddingBottom="8dp" />
+            <ProgressBar android:id="@+id/progress" style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent" android:layout_height="4dp"
+                android:indeterminate="true" android:visibility="gone" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:layout_marginTop="12dp"
+                android:background="@drawable/glass_panel" android:padding="12dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="DOWNLOAD ACTIVITY" android:textStyle="bold"
+                    android:textColor="#75F6D5" android:textSize="12sp" android:paddingBottom="8dp" />
+                <ScrollView android:layout_width="match_parent" android:layout_height="250dp"
+                    android:fillViewport="true">
+                    <TextView android:id="@+id/log" android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enter a V2PH or Xasiat album URL. Sign in using Site login if needed."
+                        android:textColor="#FFFFFF" android:textSize="12sp"
+                        android:fontFamily="monospace" />
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/browser_root" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView android:id="@+id/wallpaper_image" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:scaleType="centerCrop"
+        android:contentDescription="App wallpaper" />
+    <View android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#7C07111F" />
+    <LinearLayout android:id="@+id/browser_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingLeft="12dp" android:paddingRight="12dp"
+            android:paddingTop="6dp" android:paddingBottom="6dp">
+            <TextView android:id="@+id/browser_title" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="SITE LOGIN" android:textStyle="bold" android:textSize="17sp"
+                android:textColor="#75F6D5" />
+            <Button android:id="@+id/browser_done" style="@style/GlassButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Done" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingLeft="8dp"
+            android:paddingRight="8dp" android:gravity="center_vertical">
+            <EditText android:id="@+id/browser_address" android:layout_width="0dp"
+                android:layout_height="46dp" android:layout_weight="1" android:singleLine="true"
+                android:paddingLeft="10dp" android:paddingRight="10dp" android:textColor="#FFFFFF"
+                android:background="@drawable/glass_panel" android:textColorHint="#BFD1DA"
+                android:hint="https://" android:inputType="textUri" android:textSize="13sp"
+                android:imeOptions="actionGo" />
+            <Button android:id="@+id/browser_go" style="@style/GlassButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Go" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingLeft="8dp" android:paddingRight="8dp">
+            <Button android:id="@+id/browser_back" style="@style/GlassButton"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Back" />
+            <Button android:id="@+id/browser_forward" style="@style/GlassButton"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Forward" />
+            <Button android:id="@+id/browser_reload" style="@style/GlassButton"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Reload" />
+            <Button android:id="@+id/browser_home" style="@style/GlassButton"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Site home" />
+        </LinearLayout>
+        <TextView android:id="@+id/browser_session" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:paddingLeft="14dp"
+            android:paddingRight="14dp" android:paddingBottom="6dp"
+            android:textColor="#FFFFFF" android:textSize="12sp"
+            android:text="Checking site cookies (not a verified login)" />
+        <ProgressBar android:id="@+id/browser_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent" android:layout_height="3dp"
+            android:max="100" android:visibility="gone" />
+        <!-- The site has its own background; the wallpaper is behind browser controls. -->
+        <WebView android:id="@+id/browser_webview" android:layout_width="match_parent"
+            android:layout_height="0dp" android:layout_weight="1" />
+    </LinearLayout>
+</FrameLayout>
